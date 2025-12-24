@@ -16,3 +16,4 @@ A modern weather dashboard built with **Vanilla JavaScript** and **OpenWeatherMa
 3. Add your [OpenWeatherMap API Key](https://openweathermap.org/) to `config.js`:
    ```javascript
    const API_CONFIG = { KEY: "YOUR_KEY_HERE" };
+
