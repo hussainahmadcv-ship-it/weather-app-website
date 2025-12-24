@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast | Modern Weather</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="weather-card">
+        <form class="search-box" id="search-form">
+            <input type="text" id="city-input" placeholder="Search city..." autocomplete="off">
+            <button type="submit">Go</button>
+        </form>
+
+        <div id="loader" class="loader hidden"></div>
+
+        <div id="error" class="error-message hidden"></div>
+
+        <div id="weather-content" class="weather-info hidden">
+            <div class="city" id="city-name">London, GB</div>
+            <div class="temp"><span id="temp-value">20</span>°C</div>
+            <div class="description" id="weather-desc">Cloudy</div>
+
+            <div class="details">
+                <div class="detail-item">
+                    <p>Humidity</p>
+                    <p id="humidity-value">0%</p>
+                </div>
+                <div class="detail-item">
+                    <p>Wind Speed</p>
+                    <p id="wind-value">0 km/h</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="placeholder">
+            <p style="opacity: 0.7;">Enter a city to see the weather</p>
+        </div>
+    </div>
+   
+   <script src="config.js"></script> 
+<script src="script.js"></script>
+</body>
+</html>

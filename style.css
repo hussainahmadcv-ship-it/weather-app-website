@@ -1,0 +1,160 @@
+ :root {
+            --glass-bg: rgba(255, 255, 255, 0.2);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --text-color: #ffffff;
+            --accent-color: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            /* Smooth gradient background */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--text-color);
+        }
+
+        /* Glassmorphism Card Container */
+        .weather-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Search Section */
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            padding: 12px 20px;
+            border-radius: 15px;
+            color: white;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder { color: rgba(255, 255, 255, 0.7); }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+        }
+
+        button {
+            background: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #f0f0f0;
+        }
+
+        /* Weather Info Display */
+        .weather-info {
+            transition: opacity 0.5s ease;
+        }
+
+        .city {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .temp {
+            font-size: 5rem;
+            font-weight: 300;
+            margin: 10px 0;
+        }
+
+        .description {
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Details Grid */
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 30px;
+        }
+
+        .detail-item p:first-child {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+
+        .detail-item p:last-child {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* States & Animations */
+        .hidden { display: none; }
+
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        .error-message {
+            color: #ff8a8a;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 400px) {
+            .weather-card { padding: 25px; }
+            .temp { font-size: 3.5rem; }
+        }
